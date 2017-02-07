@@ -24,8 +24,8 @@ class LoginForm extends Form
         $this->add(
             [
                 'name'       => 'username',
+                'type'  => Text::class,
                 'attributes' => [
-                    'type'        => Text::class,
                     'id'          => 'username',
                     'placeholder' => ''
                 ],
@@ -38,8 +38,8 @@ class LoginForm extends Form
         $this->add(
             [
                 'name'       => 'password',
+                'type'  => Password::class,
                 'attributes' => [
-                    'type'        => Password::class,
                     'id'          => 'password',
                     'placeholder' => ''
                 ],
@@ -52,11 +52,13 @@ class LoginForm extends Form
         $this->add(
             [
                 'name'       => 'submit',
+                'type' => Submit::class,
                 'attributes' => [
-                    'type'  => Submit::class,
                     'class' => 'submit',
                     'value' => 'einloggen'
-                ]
+                ],
+                'options'    => [
+                ],
             ]
         );
     }
