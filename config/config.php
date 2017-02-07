@@ -8,13 +8,17 @@ $cacheConfig = [
 ];
 
 $aggregator = new ConfigAggregator([
-    \Zend\Router\ConfigProvider::class,
-    \Zend\Validator\ConfigProvider::class,
+    Zend\Form\ConfigProvider::class,
+    Zend\InputFilter\ConfigProvider::class,
+    Zend\Filter\ConfigProvider::class,
+    Zend\Hydrator\ConfigProvider::class,
+    Zend\Router\ConfigProvider::class,
+    Zend\Validator\ConfigProvider::class,
 
-    new ArrayProvider($cacheConfig),
-
+    UserAuth\ConfigProvider::class,
     Application\ConfigProvider::class,
 
+    new ArrayProvider($cacheConfig),
     new PhpFileProvider('config/autoload/{{,*.}global,{,*.}local}.php'),
 ], $cacheConfig['config_cache_path']);
 
