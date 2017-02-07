@@ -46,14 +46,14 @@ class ConfigProvider
             'layout' => 'layout/default',
             'map'    => [
                 'layout/default' => __DIR__
-                    . '/../templates/layout/default.phtml',
-                'error/error'    => __DIR__ . '/../templates/error/error.phtml',
-                'error/404'      => __DIR__ . '/../templates/error/404.phtml',
+                    . '/../template/layout/default.phtml',
+                'error/error'    => __DIR__ . '/../template/error/error.phtml',
+                'error/404'      => __DIR__ . '/../template/error/404.phtml',
             ],
             'paths'  => [
-                'application' => [__DIR__ . '/../templates/application'],
-                'error'       => [__DIR__ . '/../templates/error'],
-                'layout'      => [__DIR__ . '/../templates/layout'],
+                'application' => [__DIR__ . '/../template/application'],
+                'error'       => [__DIR__ . '/../template/error'],
+                'layout'      => [__DIR__ . '/../template/layout'],
             ],
         ];
     }
