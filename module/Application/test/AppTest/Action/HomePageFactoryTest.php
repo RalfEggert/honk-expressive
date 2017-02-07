@@ -1,9 +1,9 @@
 <?php
 
-namespace AppTest\Action;
+namespace ApplicationTest\Action;
 
-use App\Action\HomePageAction;
-use App\Action\HomePageFactory;
+use Application\Action\HomePageAction;
+use Application\Action\HomePageFactory;
 use Interop\Container\ContainerInterface;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
@@ -19,18 +19,6 @@ class HomePageFactoryTest extends \PHPUnit_Framework_TestCase
         $router = $this->prophesize(RouterInterface::class);
 
         $this->container->get(RouterInterface::class)->willReturn($router);
-    }
-
-    public function testFactoryWithoutTemplate()
-    {
-        $factory = new HomePageFactory();
-        $this->container->has(TemplateRendererInterface::class)->willReturn(false);
-
-        $this->assertTrue($factory instanceof HomePageFactory);
-
-        $homePage = $factory($this->container->reveal());
-
-        $this->assertTrue($homePage instanceof HomePageAction);
     }
 
     public function testFactoryWithTemplate()

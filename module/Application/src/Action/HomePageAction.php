@@ -28,14 +28,6 @@ class HomePageAction
     ) {
         $data = [];
 
-        $data['routerName'] = 'Zend Router';
-        $data['routerDocs']
-                            = 'http://framework.zend.com/manual/current/en/modules/zend.mvc.routing.html';
-
-        $data['templateName'] = 'Zend View';
-        $data['templateDocs']
-                              = 'http://framework.zend.com/manual/current/en/modules/zend.view.quick-start.html';
-
         return new HtmlResponse(
             $this->template->render('application::home-page', $data)
         );
