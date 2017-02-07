@@ -4,7 +4,6 @@ namespace Application;
 
 use Application\Action\HomePageAction;
 use Application\Action\HomePageFactory;
-use Application\Action\PingAction;
 
 /**
  * Class ConfigProvider
@@ -32,9 +31,6 @@ class ConfigProvider
     public function getDependencies() : array
     {
         return [
-            'invokables' => [
-                PingAction::class => PingAction::class,
-            ],
             'factories'  => [
                 HomePageAction::class => HomePageFactory::class,
             ],
@@ -80,12 +76,6 @@ class ConfigProvider
                 'name'            => 'home',
                 'path'            => '/',
                 'middleware'      => HomePageAction::class,
-                'allowed_methods' => ['GET'],
-            ],
-            [
-                'name'            => 'api.ping',
-                'path'            => '/api/ping',
-                'middleware'      => PingAction::class,
                 'allowed_methods' => ['GET'],
             ],
         ];
