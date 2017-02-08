@@ -1,8 +1,10 @@
 <?php
 
 namespace UserAuth;
+
 use UserAuth\Action\LoginAction;
 use UserAuth\Action\LoginActionFactory;
+use UserAuth\Authentication\AuthenticationMiddleware;
 use UserAuth\Form\LoginForm;
 use UserAuth\Form\LoginFormFactory;
 use UserAuth\InputFilter\LoginInputFilter;
@@ -38,7 +40,8 @@ class ConfigProvider
     {
         return [
             'factories' => [
-                LoginAction::class => LoginActionFactory::class,
+                LoginAction::class              => LoginActionFactory::class,
+                AuthenticationMiddleware::class => InvokableFactory::class,
             ],
         ];
     }
